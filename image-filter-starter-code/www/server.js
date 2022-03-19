@@ -45,7 +45,7 @@ const util_1 = require("./util/util");
         }
         const filteredpath = yield util_1.filterImageFromURL(image_url);
         let list_files = [filteredpath];
-        res.sendFile(filteredpath, function () {
+        res.status(200).sendFile(filteredpath, function () {
             util_1.deleteLocalFiles(list_files);
         });
         //res.send("try GET /filteredimage?image_url={{}}")
